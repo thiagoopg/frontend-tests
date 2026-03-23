@@ -17,7 +17,7 @@ test.describe('testar falhas ao criar usuários', () => {
         await expect(page).toHaveURL('https://front.serverest.dev/home', {timeout: 20000})
         await cadastroPage.visitarPaginaCadastro()
         await cadastroPage.cadastro.cadastrarUsuario(UserFactory.build({email:'repetido@qa.com',admin: false}))
-        expect(page).toHaveURL('https://front.serverest.dev/cadastrarusuarios')
-        expect(cadastroPage.cadastro.getAlert()).toMatch('Email repetido');
+        await expect(page).toHaveURL('https://front.serverest.dev/cadastrarusuarios')
+        await expect(await cadastroPage.cadastro.getAlert()).toContainText('Este email já está sendo usado');
     })
 })

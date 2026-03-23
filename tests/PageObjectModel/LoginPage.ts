@@ -14,12 +14,12 @@ export class LoginPage {
         this.url = 'https://front.serverest.dev/login';
         this.alert = page.locator('.alert');
         this.email = page.getByTestId('email');
-        this.password = page.getByTestId('password');
+        this.password = page.getByTestId('senha');
         this.loginButton = page.getByTestId('entrar');
         this.cadastrarButton = page.getByTestId('cadastrar');
     }
     async visitarPaginaLogin(){
-        await this.page.goto(this.url);
+        await this.page.goto(this.url,{timeout: 10000});
     }
     async visitarPaginaCadastroPeloLogin(){
         await this.cadastrarButton.click();
