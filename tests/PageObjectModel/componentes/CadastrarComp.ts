@@ -1,6 +1,6 @@
 import { Locator, Page } from "@playwright/test";
 
-export class CadastroComp {
+export class CadastrarComp {
     private readonly page:Page;
 
     private readonly alert:Locator;

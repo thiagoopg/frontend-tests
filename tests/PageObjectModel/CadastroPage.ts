@@ -1,12 +1,12 @@
 import {Page,Locator} from '@playwright/test';
-import {CadastroComp} from "./componentes/cadastroComp";
+import {CadastrarComp} from "./componentes/CadastrarComp";
 
 export class CadastroPage{
     private readonly page:Page;
 
     private readonly url:string;
 
-    public readonly cadastro: CadastroComp;
+    public readonly cadastro:CadastrarComp;
 
     private readonly loginButton:Locator;
 
@@ -15,7 +15,7 @@ export class CadastroPage{
 
         this.url = 'https://front.serverest.dev/cadastrarusuarios';
 
-        this.cadastro = new CadastroComp(page);
+        this.cadastro = new CadastrarComp(page);
 
         this.loginButton = page.getByTestId('entrar');
     }
