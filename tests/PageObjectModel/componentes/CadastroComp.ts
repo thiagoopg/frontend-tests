@@ -8,7 +8,7 @@ export class CadastroComp {
     private readonly email:Locator;
     private readonly password:Locator;
     private readonly adminCheckbox:Locator;
-    private readonly cadastrarButton:Locator;
+    public cadastrarButton:Locator;
 
     constructor(page: Page) {
         this.alert = page.locator('.alert');
@@ -34,5 +34,15 @@ export class CadastroComp {
             await this.adminCheckbox.check();
         }
         await this.cadastrarButton.click();
+    }
+    async cadastrarUsers(usuarios: {
+        nome: string;
+        email: string;
+        password: string;
+        admin: boolean;
+    }[]) {
+        for (const user of usuarios) {
+            await this.cadastrarUsuario(user);
+        }
     }
 }
