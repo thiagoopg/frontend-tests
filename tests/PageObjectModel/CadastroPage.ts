@@ -21,11 +21,10 @@ export class CadastroPage{
     }
 
     async visitarPaginaCadastro(){
-        await this.page.goto(this.url);
+        await this.page.goto(this.url,{timeout: 10000});
     }
     async visitarPaginaLogin(){
         await this.loginButton.click();
     }
-
 
 }
