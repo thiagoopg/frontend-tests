@@ -45,14 +45,11 @@ test.describe('gerenciar usuários - exclusão', () => {
             .toHaveCount(1);
     });
 
-    test('como administrador, não consigo excluir meu próprio usuário', async ({ page }) => {
+    test('como administrador, não consigo excluir meu próprio usuário', async ({ listarUsersPage ,page }) => {
 
         await page.goto('https://front.serverest.dev/admin/listarusuarios');
 
-        await page.locator(`text=${admin.email}`)
-            .locator('..')
-            .getByRole('button', { name: 'Excluir' })
-            .click();
+        listarUsersPage.excluirUsuarioPorEmail(admin.email);
 
         // continua na lista
         await expect(page.locator(`text=${admin.email}`))
