@@ -17,10 +17,12 @@ type MyFixture =
 export const test = base.extend<MyFixture>({
     cadastroPage: async ({page}, use) => {
         const cadastroPage = new CadastroPage(page);
+        await cadastroPage.visitarPaginaCadastro();
         await use(cadastroPage);
     },
     loginPage: async ({page}, use) => {
         const loginPage = new LoginPage(page);
+        await loginPage.visitarPaginaLogin();
         await use(loginPage);
     },
     inicialPage: async ({page}, use) => {
