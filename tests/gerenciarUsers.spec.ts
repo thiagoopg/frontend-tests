@@ -22,8 +22,6 @@ test.describe('gerenciar usuários - exclusão', () => {
         await cadastrarUsersPage.cadastro.cadastrarUsuario(userParaExcluir);
 
         //Faço a verificação do teste
-        //Faço a verificação do teste
-        await listarUsersPage.visitarPaginaListarUsers();
         await listarUsersPage.excluirUsuarioPorEmail(userParaExcluir.email);
         await expect(page.locator(`text=${userParaExcluir.email}`))
             .toHaveCount(0);
@@ -39,7 +37,6 @@ test.describe('gerenciar usuários - exclusão', () => {
         await cadastrarUsersPage.cadastro.cadastrarUsuario(userParaExcluir);
 
         //Faço a verificação do teste
-        await listarUsersPage.visitarPaginaListarUsers();
         await listarUsersPage.excluirUsuarioPorEmail(userParaExcluir.email);
         await expect(page.locator(`text=${userParaExcluir.email}`))
             .toHaveCount(1);
