@@ -5,12 +5,11 @@ Testes de interface web utilizando a aplicação [Serverest](https://front.serve
 
 ## Sobre o Projeto
 
-Este projeto implementa testes automatizados para a plataforma Serverest, focando em fluxos de:
-- **Criação de usuários** (administradores e usuários normais)
-- **Validações de cadastro** (emails duplicados, etc)
-- **Gerenciamento de usuários** (exclusão com permissões)
-
-A solução utiliza boas práticas de automação de testes, incluindo Page Object Model, Factory Pattern e Fixtures customizadas.
+Este projeto implementa testes automatizados para a plataforma Serverest, aonde foi aplicado:
+- **Cocumentação Gherkin + BDD ao início**(firts commits)
+- **Pom(Page Objects Model)** - implementando componentes como page e telas que usam ou não os componentes
+- **Fixtures** - preparação dos testes, injetando os pom
+- **Factory** - criação de objetos dinâmicos
 
 ## Tecnologias
 
@@ -23,11 +22,14 @@ A solução utiliza boas práticas de automação de testes, incluindo Page Obje
 
 ```
 frontend-tests/
+├── docs/                         # Pasta com a documentação(Gherkin + BDD)
 ├── tests/
 │   ├── PageObjectModel/          # Pasta com os Page Object Model
 │   │   └── componentes/          # Componentes reutilizáveis para as Pages
+|   |
 │   ├── factory/                  # Factory Pattern
 │   ├── fixtures/                 # Fixtures customizadas do Playwright usufruindo do POM
+|   |
 │   ├── login.spec.ts             # Testes de login e cadastro
 │   └── gerenciarUsers.spec.ts    # Testes de gerenciamento de usuários
 ├── playwright.config.ts          # Configuração do Playwright
