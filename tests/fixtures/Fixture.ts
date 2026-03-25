@@ -1,6 +1,6 @@
 import { test as base } from '@playwright/test';
-import {LoginPage} from "../PageObjectModel/loginPage";
-import {CadastroPage} from "../PageObjectModel/cadastroPage";
+import {LoginPage} from "../PageObjectModel/LoginPage";
+import {CadastroPage} from "../PageObjectModel/CadastroPage";
 import {InicialPage} from "../PageObjectModel/admin/InicialPage";
 import {CadastrarUsersPage} from "../PageObjectModel/admin/CadastrarUsersPage";
 import {ListarUsersPage} from "../PageObjectModel/ListarUsersPage";
