@@ -1,5 +1,5 @@
-import {test, expect} from './fixtures/fixture';
-import {UserFactory} from "./factory/userFactory";
+import {test, expect} from './fixtures/Fixture';
+import {UserFactory} from "./factory/UserFactory";
 
 test.describe('criar usuários com sucesso', () => {
     test.beforeEach(async ({cadastroPage}) => {
